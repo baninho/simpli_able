@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'components/button.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -112,6 +114,15 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
+            CustomButton(
+            config: ButtonConfig(
+              text: 'Click Me!',
+              color: Colors.blue,
+              onPressed: () {
+                print('Button Pressed!');
+              }
+              ),
+            ),
           ],
         ),
       ),
@@ -119,6 +130,7 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
+
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
